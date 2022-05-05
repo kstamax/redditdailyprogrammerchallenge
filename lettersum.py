@@ -1,4 +1,3 @@
-from typing import final
 import requests as req
 wordsurl = 'https://raw.githubusercontent.com/dolph/dictionary/master/enable1.txt'
 words = str(req.get(wordsurl).content).replace("b'","").replace("'","").split('\\n')

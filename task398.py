@@ -1,6 +1,4 @@
 import requests as req
-from time import time
-t = time()
 class searchTree():
     '''Search Tree contains solutions nodes and functions to add node and read some node properties'''
     def __init__(self, m):

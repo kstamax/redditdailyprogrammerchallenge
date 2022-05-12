@@ -1,4 +1,3 @@
-from hashlib import new
 import requests as req
 from time import time
 t = time()

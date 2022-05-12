@@ -9,21 +9,25 @@ def unique(l):
             res.append(e)
     return res
 def lettersum(s):
+    '''Computes lettersum of a word (main task)'''
     res = 0
     for l in s:
         res += (ord(l)-96)
     return res
 def task1():
+    '''Optional bonus challenge 1''' 
     for word in words:
         if lettersum(word) == 319:
             return word
 def task2():
+    '''Optional bonus challenge 2'''
     wc = 0
     for word in words:
         if lettersum(word)%2!=0:
             wc+=1
     return wc
 def task3():
+    '''Optional bonus challenge 3'''
     lettersumlist = [lettersum(x) for x in words]
     u_lettersumlist = unique(lettersumlist)
     cDict = {}
@@ -31,6 +35,7 @@ def task3():
         cDict[i] = lettersumlist.count(i)
     return max(cDict, key=cDict.get)
 def task4():
+    '''Optional bonus challenge 4'''
     res = {}
     lettersumlist = [lettersum(x) for x in words]
     u_lettersumlist = unique(lettersumlist)
@@ -48,6 +53,7 @@ def task4():
                         res[l[i]].append(l[j])
     return res
 def task5():
+    '''Optional bonus challenge 5'''
     res = {}
     lettersumlist = [lettersum(x) for x in words]
     u_lettersumlist = unique(lettersumlist)
@@ -70,6 +76,7 @@ def task5():
                         res[l[i]].append(l[j])
     return res  
 def task6():
+    '''Optional bonus challenge 6'''
     final_res = []
     res = []
     lettersumlist = [lettersum(x) for x in words]
@@ -99,6 +106,7 @@ def task6():
     return final_res
 desc = 'Options:\n0-Close the program;\n1-Word with letter sum of 319;\n2-Number of words with odd lettersum;\n3-Most common lettersum;\n4-Pair of words with the same letter sum whose lengths differ by 11 letters;\n5-Pair of words that have no letters in common, and that have the same letter sum, which is larger than 188;\n6-The longest list where each word has both a different number of letters, and a different letter sum.\n The list is sorted both in descending order of word length, and ascending order of letter sum;\n7-Lettersum of word;'
 print(desc)
+'''main program loop'''
 while True:
     p = input('Select option (type "options" to see list of options): ')
     if p == "0":
